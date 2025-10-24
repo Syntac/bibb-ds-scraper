@@ -45,57 +45,8 @@ To run the **parse tool**, run `deno task parse`.
 
 ## Example
 ```bash
-deno task search "Maschinenbau - Allgemeiner Maschinenbau" > sample.urls;
-deno task parse < sample.urls > sample.csv
+deno task search "Maschinenbau" > sample.urls 2> sample.log
+deno task parse < sample.urls > sample.csv 2>> sample.log
 ```
 
-See [sample.urls](sample.urls) and [sample.csv](sample.csv).
-
-#### Log output with debug and info logs:
-```
-Task search deno task --cwd="./search" start "Maschinenbau - Allgemeiner Maschinenbau"
-Task start deno run --allow-net=www.bibb.de:443 main.ts "Maschinenbau - Allgemeiner Maschinenbau"
-[DEBUG] Fetching search page 1
-[DEBUG] Fetching search page 1
-
-Task parse deno task --cwd="./parse" start
-Task start deno run --allow-net=www.bibb.de:443 main.ts
-[DEBUG] Fetching url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/10834"
-[DEBUG] Parsing html of url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/10834"
-[INFO] Failed to parse key "Weitere Anmerkungen zum dualen Studiengang" 
-         Error: Failed to find unique strong tag with textContent "Weitere Anmerkungen zum dualen Studiengang"
-[INFO] Failed to parse key "Plätze zum nächsten Bewerbungstermin" 
-         Error: Failed to find unique strong tag with textContent "Plätze zum nächsten Bewerbungstermin"
-[INFO] Failed to parse key "Internationalität" 
-         Error: Failed to find unique h3 tag with textContent "Internationalität"
-[DEBUG] Fetching url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/13786"
-[DEBUG] Parsing html of url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/13786"
-[INFO] Failed to parse key "Studiengang existiert seit" 
-         Error: Failed to find unique strong tag with textContent "Studiengang existiert seit"
-[INFO] Failed to parse key "Weitere Anmerkungen zum dualen Studiengang" 
-         Error: Failed to find unique strong tag with textContent "Weitere Anmerkungen zum dualen Studiengang"
-[INFO] Failed to parse key "Bewerbungsfrist" 
-         Error: Failed to find unique strong tag with textContent "Bewerbungsfrist"
-[INFO] Failed to parse key "Plätze zum nächsten Bewerbungstermin" 
-         Error: Failed to find unique strong tag with textContent "Plätze zum nächsten Bewerbungstermin"
-[INFO] Failed to parse key "Internationalität" 
-         Error: Failed to find unique h3 tag with textContent "Internationalität"
-[DEBUG] Fetching url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/14946"
-[DEBUG] Parsing html of url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/14946"
-[INFO] Failed to parse key "Weitere Anmerkungen zum dualen Studiengang" 
-         Error: Failed to find unique strong tag with textContent "Weitere Anmerkungen zum dualen Studiengang"
-[INFO] Failed to parse key "Bewerbungsfrist" 
-         Error: Failed to find unique strong tag with textContent "Bewerbungsfrist"
-[INFO] Failed to parse key "Internationalität" 
-         Error: Failed to find unique h3 tag with textContent "Internationalität"
-[DEBUG] Fetching url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/17278"
-[DEBUG] Parsing html of url "https://www.bibb.de/dienst/ausbildungplus/de/dualer_studiengang/ansehen/17278"
-[INFO] Failed to parse key "Studierende in diesem Studiengang" 
-         Error: Failed to find unique strong tag with textContent "Studierende in diesem Studiengang"
-[INFO] Failed to parse key "Weitere Anmerkungen zum dualen Studiengang" 
-         Error: Failed to find unique strong tag with textContent "Weitere Anmerkungen zum dualen Studiengang"
-[INFO] Failed to parse key "Plätze zum nächsten Bewerbungstermin" 
-         Error: Failed to find unique strong tag with textContent "Plätze zum nächsten Bewerbungstermin"
-[INFO] Failed to parse key "Internationalität" 
-         Error: Failed to find unique h3 tag with textContent "Internationalität"
-```
+See [sample.urls](sample.urls), [sample.csv](sample.csv) and [sample.log](sample.log).
