@@ -1,0 +1,6 @@
+{
+    "tasks": {
+        "search": "deno task --cwd=\"./search\" start",
+        "parse": "deno task --cwd=\"./parse\" start"
+    }
+}

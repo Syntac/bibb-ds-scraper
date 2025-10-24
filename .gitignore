@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+!README.md
+!deno.json
+!search
+!search/**
+!parse
+!parse/**
+
+!sample.*
