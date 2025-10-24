@@ -35,6 +35,10 @@ I won’t include any automated tests with the tool. Since it’s meant for sing
 
 # How to Run
 
+### Prerequisites
+
+[Deno](https://deno.com) version **2.2.12 or later** installed. Older versions may work. 
+
 ### Search Tool
 
 ```bash
