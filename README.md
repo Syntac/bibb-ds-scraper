@@ -36,14 +36,19 @@ Were I to share the tool with other users and continue development on it, I'd in
 
 # How to run
 
-To run the **search tool**, run `deno task search [searchTerm]`.
-<br>It will print a list of ad-urls to stdout.
+### Search Tool
+```bash
+deno task search [searchTerm]
+```
+It will print a list of ad-urls to stdout.
 
-To run the **parse tool**, run `deno task parse`.
-<br>It reads the ad-urls from stdin and writes the resulting csv to stdout.
-<br>**Example usage:** `deno task parse < sample.urls > sample.csv`
+### Parse Tool
+```bash
+deno task parse
+```
+It reads the ad-urls from stdin and writes the resulting csv to stdout.
 
-## Example
+### Example
 ```bash
 deno task search "Maschinenbau" > sample.urls 2> sample.log
 deno task parse < sample.urls > sample.csv 2>> sample.log
